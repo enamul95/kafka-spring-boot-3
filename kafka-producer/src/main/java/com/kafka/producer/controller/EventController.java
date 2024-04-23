@@ -21,7 +21,9 @@ public class EventController {
     public ResponseEntity<?> publishMessage(@PathVariable String message) {
         try {
 
-            publisher.sendMessageToTopic(message);
+            for(int i = 0;i<=10000;i++) {
+                publisher.sendMessageToTopic(message+" : "+i);
+            }
             return ResponseEntity.ok("Message published successful");
 
         } catch (Exception ex) {
