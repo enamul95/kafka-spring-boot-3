@@ -1,9 +1,8 @@
-package com.kafka.producer.controller;
+package com.kafka.example.controller;
 
-import com.kafka.producer.dto.CustomerDto;
-import com.kafka.producer.service.KafkaMessagePublisher;
+import com.kafka.example.dto.CustomerDto;
+import com.kafka.example.service.KafkaMessagePublisher;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpCookie;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +28,7 @@ public class EventController {
         }
 
     }
+
 
     @PostMapping("/publish")
     public void sendEvents(@RequestBody CustomerDto customerDto){

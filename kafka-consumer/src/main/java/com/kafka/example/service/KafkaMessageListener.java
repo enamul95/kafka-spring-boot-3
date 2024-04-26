@@ -1,6 +1,6 @@
-package com.kafka.consumer.service;
+package com.kafka.example.service;
 
-import com.kafka.consumer.dto.CustomerDto;
+import com.kafka.example.dto.CustomerDto;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.kafka.annotation.KafkaListener;
@@ -10,9 +10,19 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class KafkaMessageListener {
 
-    @KafkaListener(topics = "java-topic-demo-6",groupId = "jt-group-demo-6")
-    public void consumeEvents(CustomerDto customerDto){
-        log.info("consumer1 consume the events {} ",customerDto.toString());
+   // @KafkaListener(topics = "jt-demo-1",groupId = "jt-group-4")
+    @KafkaListener(topics = "en1",groupId = "en1-group1")
+    public void consumeEvents(CustomerDto customer) {
+        log.info("consumer consume the events {} ", customer.toString());
+    }
+
+
+
+    //@KafkaListener(topics = "jt-demo-1",groupId = "jt-group-4")
+
+    @KafkaListener(topics = "en1",groupId = "en1-group1")
+    public void consume1(String message){
+        log.info("consumer1 consume the message {} ",message);
     }
 
    /* @KafkaListener(topics = "java-topic-demo-5",groupId = "jt-group-demo-5")
