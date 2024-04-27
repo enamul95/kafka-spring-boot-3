@@ -22,7 +22,7 @@ public class KafkaProducerConfig {
         return new NewTopic("en1",3,(short) 1);
     }
 
-    @Bean
+  /*  @Bean
     public Map<String,Object> producerConfig(){
         Map<String,Object> props=new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
@@ -43,5 +43,5 @@ public class KafkaProducerConfig {
     public KafkaTemplate<String,Object> kafkaTemplate(){
         return new KafkaTemplate<>(producerFactory());
     }
-
+*/
 }

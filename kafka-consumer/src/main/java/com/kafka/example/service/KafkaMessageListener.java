@@ -14,6 +14,7 @@ public class KafkaMessageListener {
     @KafkaListener(topics = "en1",groupId = "en1-group1")
     public void consumeEvents(CustomerDto customer) {
         log.info("consumer consume the events {} ", customer.toString());
+        log.info("consumer consume the events name {} ", customer.getName());
     }
 
 

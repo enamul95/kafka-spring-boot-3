@@ -1,16 +1,19 @@
 server:
   port: 9292
-#
-#
-#spring:
-#  kafka:
-#    consumer:
-#      bootstrap-servers: localhost:9092
-#      group-id: jt-group-3
-#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-#      properties:
-#        spring.json.add.type.headers: false
+
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: en1-group1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.kafka.example.dto
 
 
 
@@ -20,7 +23,7 @@ server:
 #        spring:
 #          json:
 #            trusted:
-#              packages: com.kafka.consumer.dto.CustomerDto
+#              packages: com.kafka.example.dto
 
 
 
